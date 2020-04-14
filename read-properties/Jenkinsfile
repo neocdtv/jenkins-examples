@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+		     def props = readProperties  file: 'example.properties'
+		     println(props['key1'])
+                }
+            }
+        }
+    }
+}
+
